@@ -67,7 +67,26 @@ def menu(user):
                     account.withdraw(withdrawal_amount)
                     account.print_receipt()
         elif choice == 5:
-            pass
+            for account in user.accounts:
+                account.print_receipt()
+            print("Input Source Account Number followed by Destination Account Number")
+            account_numbers = input().split()
+            print("Input transfer amount: ")
+            transfer_amount = int(input())
+
+            from_account = None
+            to_account = None
+            for account in user.accounts:
+              if account == int(account_numbers[0]):
+                from_account = account
+              if account == int(account_numbers[1]):
+                to_account = account
+
+            if from_account and to_account:
+              if from_account.withdraw(transfer_amount):
+                  to_account.deposit(transfer_amount)
+
+
         elif choice == 6:
             for account in user.accounts:
                 account.print_receipt()
