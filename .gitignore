@@ -1,0 +1,20 @@
+# VS Code
+.vscode/
+
+# Compiled output
+bin/
+*.class
+
+# Libraries
+lib/
+
+# System files
+*.xml
+.bash_history
+.gitconfig
+credentials.json
+settings.json
+*.backup.*
+
+# Claude / AI tools
+.claude.
